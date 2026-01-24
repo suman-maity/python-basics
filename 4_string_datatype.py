@@ -17,10 +17,10 @@ print("Length of string:", len(s))
 print("\n")
 
 #slicing
-print("Substring (0-4):", s[0:5]) # from index 0 to 4
+print("Substring (0-4):", s[0:5]) # from index 0 to 4, last index is exclusive
 print("Substring (7-end):", s[7:]) # from index 7 to end
 print("Substring (start-5):", s[:5]) # from start to index 4, last index is exclusive
-print("Substring (start-end-step 2):", s[1:10:2]) # from 1st element to 9th element with step 2, i.e., every second character
+print("Substring (start-10-step 2):", s[1:10:2]) # from 1st element to 9th element with step 2, i.e., every second character
 print("Substring (start-end-step 2):", s[::2]) # from start to end with step 2, i.e., every second character
 
 print("\n")
@@ -28,9 +28,10 @@ print("\n")
 # negative indexing
 print("Last character:", s[-1]) # last character. -1 represents last character
 print("Second last character:", s[-2]) # second last character
-print("Substring using negative indexing (-5 to end):", s[-5:]) # last 5 characters - from -5 index to end, this is printing from left to right
-print("Substring using negative indexing (start to -5):", s[:-5]) # from start to -5 index, this is printing from left to right
-print("Substring using negative indexing (-10 to -5):", s[-10:-5]) # from -10 index to -5 index, this is printing from left to right
+print("Substring using negative indexing (-5 to end):", s[-5:]) # from index -4 (index -5 excluded) to end, this is printing from left to right only 
+#but last character is at index 0
+print("Substring using negative indexing (start to -5):", s[:-5]) # from index -4 to end, this is printing from left to right only 
+print("Substring using negative indexing (-10 to -5):", s[-10:-5]) # from -9 index to -5 index, this is printing from left to right
 print("Substring using negative indexing (start to end with step -1):", s[::-1]) # reverse the string, step is negative, means move from right to left
 print("Slicing does not change original string:", s) # original string remains unchanged
 
@@ -46,13 +47,12 @@ print("After rstrip:'" + s2.rstrip() + "'") # removes trailing whitespace
 print("\n")
 
 #finding a substring
-s3 = "The world is beautiful. The world is vast. World is amazing."
+s3 = "The world is beautiful. The world is vast. The World is amazing."
 print("First occurrence of 'world' at index:", s3.find("world")) # returns index of first occurrence
 print("First occurrence of 'World' at index:", s3.find("World")) # case-sensitive search
 print("Case sensitive search - 'Vast' found at index:", s3.find("Vast")) # "Vast" not found, returns -1, because of case sensitivity
 print("Find 'world' starting from index 10:", s3.find("world", 10)) # search starting from index 10
 print("Find 'world' starting from index 10, ending at 12:", s3.find("world", 10, 12)) # search starting from index 10, ending at 12, not found, returns -1
-print("slicing oper")
 
 print("\n")
 
